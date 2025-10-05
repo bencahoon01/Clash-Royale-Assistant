@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build && electron-builder",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start-vision": "python ../vision-engine/main.py",
+    "start:all": "concurrently \"npm:start-backend\" \"npm:start-vision\" \"npm:dev\""
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -27,7 +29,8 @@
     "electron": "^30.0.1",
     "electron-builder": "^24.13.3",
     "vite-plugin-electron": "^0.28.6",
-    "vite-plugin-electron-renderer": "^0.14.5"
+    "vite-plugin-electron-renderer": "^0.14.5",
+    "concurrently": "^8.2.2"
   },
   "main": "dist-electron/main.js"
 }
