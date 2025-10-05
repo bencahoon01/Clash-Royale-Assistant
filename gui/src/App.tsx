@@ -1,50 +1,46 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/core";
+// gui/src/App.tsx
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
+  const [elixir, setElixir] = useState(0);
+  const [opponentName, setOpponentName] = useState("Connecting...");
 
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
-  }
+  useEffect(() => {
+    const ws = new WebSocket("ws://localhost:8765");
+
+    ws.onopen = () => {
+      console.log("Connected to AI engine!");
+    };
+
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+
+      setOpponentName(data.opponent.name);
+      setElixir(data.live_stats.opponent_elixir);
+    };
+
+    ws.onclose = () => {
+      console.log("Disconnected from AI engine.");
+      setOpponentName("Disconnected");
+    };
+
+    return () => {
+      ws.close();
+    };
+  }, []);
 
   return (
-    <main className="container">
-      <h1>Welcome to Tauri + React</h1>
-
-      <div className="row">
-        <a href="https://vite.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container" style={{ textAlign: 'center', paddingTop: '2rem' }}>
+      <h1>Clash Royale AI Coach</h1>
+      <div style={{ marginTop: '2rem' }}>
+        <p style={{ fontSize: '1.2rem' }}>Opponent: {opponentName}</p>
+        <p style={{ fontSize: '4rem', color: '#D946EF', fontWeight: 'bold', margin: 0 }}>
+          {elixir}
+        </p>
+        <p style={{ color: '#6c757d' }}>Opponent Elixir</p>
       </div>
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
-        <input
-          id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Enter a name..."
-        />
-        <button type="submit">Greet</button>
-      </form>
-      <p>{greetMsg}</p>
-    </main>
+    </div>
   );
 }
 

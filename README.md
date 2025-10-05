@@ -104,7 +104,7 @@ This project's tech stack is separated into three core domains, demonstrating a 
 
 | Frontend (Desktop UI) | AI / Vision Engine | Backend & DevOps |
 | :---: | :---: | :---: |
-| [![Tauri][Tauri.js]][Tauri-url] | [![Python][Python.org]][Python-url] | [![FastAPI][FastAPI.tiangolo.com]][FastAPI-url] |
+| [![Electron][Electron.js]][Electron-url] | [![Python][Python.org]][Python-url] | [![FastAPI][FastAPI.tiangolo.com]][FastAPI-url] |
 | [![React][React.js]][React-url] | [![PyTorch][PyTorch.org]][PyTorch-url] | [![PostgreSQL][PostgreSQL.org]][PostgreSQL-url] |
 | [![TypeScript][TypeScript]][TypeScript-url] | [![OpenCV][OpenCV]][OpenCV-url] | [![Docker][Docker.com]][Docker-url] |
 
@@ -112,12 +112,12 @@ This project's tech stack is separated into three core domains, demonstrating a 
 
 ### System Architecture
 
-The application operates with a decoupled architecture to ensure performance and scalability. The backend services (API and Database) are managed by Docker, while the Python Vision Engine runs as a separate process that communicates with the Tauri GUI in real-time.
+The application operates with a decoupled architecture to ensure performance and scalability. The backend services (API and Database) are managed by Docker, while the Python Vision Engine runs as a separate process that communicates with the Electron GUI in real-time.
 
 ```plaintext
 +--------------------------+        (WebSocket Events)         +----------------------+
 |                          | <--------------------------------> |                      |
-|    Tauri/React GUI       |                                    |  Python Vision Engine|
+|    Electron/React GUI       |                                 |  Python Vision Engine|
 |    (Desktop Overlay)     |                                    |  (AI & Game Logic)   |
 |                          |                                    |                      |
 +--------------------------+------------------------------------+----------------------+
@@ -202,7 +202,7 @@ python main.py
 
 ```sh
 
-npm run tauri dev
+npm run dev
 ```
 Select the window that is running the game. The app will automatically detect when a match begins and start providing live data.
 
@@ -289,8 +289,8 @@ Project Link: [https://github.com/bencahoon01/Clash-Royale-Assistant](https://gi
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
 <!-- Shields.io badges. You can a comprehensive list with many more badges at: https://github.com/inttter/md-badges -->
-[Tauri.js]: https://img.shields.io/badge/Tauri-24C8E0?style=for-the-badge&logo=tauri&logoColor=white
-[Tauri-url]: https://tauri.app/
+[Electron.js]: https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white
+[Electron-url]: https://www.electronjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [TypeScript]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
