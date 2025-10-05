@@ -106,7 +106,7 @@ This project's tech stack is separated into three core domains, demonstrating a 
 | :---: | :---: | :---: |
 | [![Electron][Electron.js]][Electron-url] | [![Python][Python.org]][Python-url] | [![FastAPI][FastAPI.tiangolo.com]][FastAPI-url] |
 | [![React][React.js]][React-url] | [![PyTorch][PyTorch.org]][PyTorch-url] | [![PostgreSQL][PostgreSQL.org]][PostgreSQL-url] |
-| [![TypeScript][TypeScript]][TypeScript-url] | [![OpenCV][OpenCV]][OpenCV-url] | [![Docker][Docker.com]][Docker-url] |
+| [![TypeScript][TypeScript]][TypeScript-url] | [![Yolo][Yolo]][Yolo-url] | [![Docker][Docker.com]][Docker-url] |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -299,8 +299,8 @@ Project Link: [https://github.com/bencahoon01/Clash-Royale-Assistant](https://gi
 [Python-url]: https://www.python.org/
 [PyTorch.org]: https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white
 [PyTorch-url]: https://pytorch.org/
-[OpenCV]: https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white
-[OpenCV-url]: https://opencv.org/
+[Yolo]: https://img.shields.io/badge/
+[Yolo-url]: https://docs.ultralytics.com/
 [FastAPI.tiangolo.com]: https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white
 [FastAPI-url]: https://fastapi.tiangolo.com/
 [PostgreSQL.org]: https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white
