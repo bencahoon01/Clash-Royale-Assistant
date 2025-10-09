@@ -37,7 +37,7 @@
 <h3 align="center">Clash Royale AI Assisstant</h3>
 
   <p align="center">
-    A real time strategic app assisstant for Clash Royale, powered by computer vision to track oppponent elixir and card cycles
+    A real time strategic app assisstant for Clash Royale, powered by computer vision to track oppponent elixir and card cycles. *Project is in progress and not currently functional if you clone the repository
     <br />
     <a href="https://github.com/bencahoon01/Clash-Royale-Assistant"><strong>Explore the docs »</strong></a>
     <br />
